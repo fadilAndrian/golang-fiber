@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY,
+    ref VARCHAR,
+    total INTEGER,
+    date TIMESTAMP,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE SET NULL
+)
